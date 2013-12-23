@@ -114,6 +114,7 @@ public class BookView extends Fragment {
 
 	}
 	
+	
 	public void errorMessage(String message) {
 		Context context = this.getActivity().getApplicationContext();
 		Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);

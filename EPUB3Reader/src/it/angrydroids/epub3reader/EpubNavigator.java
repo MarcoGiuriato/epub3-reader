@@ -37,8 +37,8 @@ public class EpubNavigator {
 	//----- NEW NAVIGATOR
 	
 	// Fields
-	private int nBooks;
-	private EpubManipulator[] books;
+	private int nBooks;					// maximum number of books in the same time
+	private EpubManipulator[] books;	// array of opened books
 	private Fragment[] views;
 	private String[] viewedPages;
 	private SplitPanel activity;
@@ -61,12 +61,10 @@ public class EpubNavigator {
 
 			books[index] = new EpubManipulator(path, index+"", context);
 			
-			if(views[index]==null)
-			{
-				views[index] = activity.addBookView(index);
-			}
-			else
-				activity.attachFragment(views[index]);
+			if(views[index]==null)							// if the fragment doesn't exists
+				views[index] = activity.addBookView(index);	// create it
+			else											// or
+				activity.attachFragment(views[index]);		// re-attach it in the main activity
 			
 			((BookView)views[index]).index = index;
 			viewedPages[index] = books[index].getSpineElementPath(0);

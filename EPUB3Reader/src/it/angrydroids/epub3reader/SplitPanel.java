@@ -55,23 +55,16 @@ public class SplitPanel extends Activity {
 	
 		public Fragment addBookView(int index)
 		{
-			Log.i("ok","ok");
 			BookView bv = new BookView();
-			Log.i("ok1","ok");
 			addFragment(bv, index);
-			Log.i("ok2","ok");
 			return bv;
 		}
 		
 		public void addFragment(Fragment f, int index)
 		{
-			Log.i("ok3","ok");
 			FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-			Log.i("ok4","ok");
 			fragmentTransaction.add(R.id.MainLayout, f, index+"");
-			Log.i("ok5","ok");
 			fragmentTransaction.commit();
-			Log.i("ok6","ok");
 		}
 		
 		public void attachFragment(Fragment f)
@@ -95,7 +88,6 @@ public class SplitPanel extends Activity {
 			fragmentTransaction.commit();
 		}
 
-		
 		// Menu
 		@Override
 		public boolean onCreateOptionsMenu(Menu menu) {
